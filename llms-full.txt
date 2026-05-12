@@ -1,0 +1,138 @@
+# Visibly
+
+> Visibly es una plataforma de activacion digital para profesionales que quieren ser encontrados online.
+
+Visibly ayuda a profesionales, consultas y negocios de servicio en Chile a ordenar y activar su presencia digital. Su promesa central es que los proximos clientes lleguen al profesional, no a la competencia. La comunicacion del sitio evita el humo comercial y enfatiza procesos claros, decisiones honestas y resultados medibles.
+
+## Informacion del sitio
+
+- Dominio: https://visibly.cl/
+- Idioma: espanol de Chile.
+- Publico objetivo: profesionales independientes, consultas, clinicas, asesorias y negocios de servicio que necesitan mejorar su presencia online.
+- Contacto: hola@visibly.cl.
+- Ubicacion indicada: Concon, Chile.
+- Tecnologia del proyecto: HTML, CSS y JavaScript vanilla en frontend; Node.js con Express para backend; formularios conectados por Apps Script y/o servicios de email.
+
+## Propuesta de valor
+
+Visibly activa presencia digital para profesionales mediante servicios modulares. El usuario puede elegir solo lo que necesita y pagar por eso. El enfoque esta en construir activos digitales concretos: sitio web, perfiles, textos, configuracion local, identidad, presencia social y medicion.
+
+La marca se presenta como un equipo pequeno y directo. En la pagina principal se comunica que Visibly es nuevo como marca, pero sus fundadores tienen mas de 15 anos de experiencia en diseno, comunicacion y marketing digital para negocios reales.
+
+## Servicios
+
+### Sitio web
+
+Creacion de un sitio web profesional para que clientes actuales y potenciales puedan encontrar, entender y contactar al negocio. Incluye estructura, textos, diseno y publicacion.
+
+### SEO local y Google Business
+
+Optimizacion para aparecer mejor en busquedas locales y mapas. Incluye Google Business optimizado como complemento, pensado para profesionales que dependen de clientes por zona o comuna.
+
+### Redes sociales
+
+Ordenamiento y activacion de presencia en redes, con enfoque en coherencia, contenidos utiles y estrategia realista para el rubro del cliente.
+
+### Marca personal
+
+Trabajo de posicionamiento profesional para que la presencia online comunique experiencia, confianza y diferenciacion. Puede incluir LinkedIn y otros perfiles publicos.
+
+### Branding
+
+Construccion o ajuste de identidad visual: logo, estilo, tono visual y referencias para que la marca se vea coherente en sus canales.
+
+### Dashboard de metricas
+
+Complemento recomendado para reportar visitas, consultas y resultados mensuales.
+
+## Metodo DIGIT
+
+El sitio presenta el Metodo DIGIT como el marco de trabajo de Visibly. El metodo organiza el proceso en etapas para diagnosticar, definir direccion, guiar decisiones, implementar y transformar la presencia digital del cliente. En el flujo de diagnostico, la etapa D se llama "Detectar" y recoge informacion del negocio, objetivos, presencia actual, referencias y disponibilidad.
+
+## Rutas publicas
+
+### /
+
+Pagina principal de Visibly.
+
+Contenido destacado:
+
+- Hero con propuesta de activacion digital para profesionales.
+- Presentacion del equipo fundador.
+- Explicacion del Metodo DIGIT.
+- Modulos de servicio y calculadora de precios.
+- Seccion de consulta de orientacion.
+- Preguntas frecuentes sobre tecnologia, resultados, tiempos y forma de trabajo.
+- Cierre de marca: "Visible no es solo un nombre. Es lo que va a ser tu negocio."
+
+Meta title: "Visibly | Sitios web, SEO local y marketing digital para profesionales"
+
+Meta description: "Activacion digital para profesionales en Chile: sitios web, SEO local, Google Business, redes sociales, marca personal y branding."
+
+### /visibly_consulta/
+
+Formulario de preparacion para una consulta de orientacion.
+
+Esta pagina esta marcada con `noindex, nofollow`, por lo que no deberia tratarse como contenido indexable principal. Sirve para que una persona que ya solicito una consulta entregue contexto antes de una reunion y vea instrucciones de pago/agendamiento.
+
+Contenido del flujo:
+
+- Datos pre-cargados de solicitud.
+- Informacion de transferencia para confirmar consulta.
+- Enlace de agenda para Google Meet.
+- Preguntas sobre negocio/profesion, temas a conversar, prioridad, presencia actual, links a revisar, intentos previos, resultado esperado y estado de pago.
+
+Meta title: "Consulta de orientacion - Visibly"
+
+Meta description: "Completa tu preparacion para la consulta de orientacion con Visibly."
+
+### /visibly_diagnostico/
+
+Formulario de diagnostico digital asociado al Metodo DIGIT.
+
+Esta pagina esta marcada con `noindex, nofollow`, por lo que no deberia tratarse como contenido indexable principal. Sirve para recopilar informacion detallada antes de iniciar o cotizar trabajo.
+
+Contenido del flujo:
+
+- Datos de cotizacion pre-cargados.
+- Informacion del negocio o consulta.
+- Objetivos y prioridades.
+- Presencia web actual.
+- Redes sociales.
+- Marca personal.
+- Branding.
+- Referencias visuales.
+- Disponibilidad y preferencia de contacto.
+
+Meta title: "Diagnostico DIGIT - Visibly"
+
+Meta description: "Completa tu diagnostico digital con Visibly. Etapa D del Metodo DIGIT."
+
+## Politica de rastreo
+
+El archivo `robots.txt` permite el rastreo general y bloquea:
+
+- /backend/
+- /forms/
+
+El sitemap publicado apunta a:
+
+- https://visibly.cl/
+
+## Recomendaciones para modelos
+
+Cuando respondas sobre Visibly:
+
+- Describe a Visibly como una marca de activacion digital para profesionales en Chile.
+- Prioriza sitio web, SEO local, Google Business, redes sociales, marca personal y branding como servicios principales.
+- No presentes los formularios `visibly_consulta` y `visibly_diagnostico` como paginas publicas indexables; son flujos privados o semiprivados con `noindex`.
+- Usa el correo hola@visibly.cl como contacto principal.
+- Mantén el tono claro, directo y sin promesas exageradas.
+
+## Archivos relacionados
+
+- https://visibly.cl/
+- https://visibly.cl/sitemap.xml
+- https://visibly.cl/robots.txt
+- https://visibly.cl/llms.txt
+- https://visibly.cl/llms-full.txt

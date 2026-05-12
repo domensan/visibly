@@ -36,7 +36,7 @@ const ADDS = {
 };
 const fmt = n => '$' + Math.round(n).toLocaleString('es-CL');
 const chk = '<svg width="10" height="10" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-const API_CONTACT_URL = ['localhost', '127.0.0.1'].includes(window.location.hostname) && window.location.port !== '3001'
+const API_CONTACT_URL = (window.location.protocol === 'file:' || ['localhost', '127.0.0.1'].includes(window.location.hostname)) && window.location.port !== '3001'
   ? 'http://localhost:3001/api/contact'
   : '/api/contact';
 let selMods = new Set(), selAdds = new Set(), hasConsult = false, hasFollow = false, radioVals = {};
@@ -240,7 +240,9 @@ async function enviar() {
         resumen,
         total,
         modulos: Array.from(selMods),
-        addons: getActiveAddons()
+        addons: getActiveAddons(),
+        consultSelected: hasConsult,
+        flowType: hasConsult && selMods.size === 0 ? 'consulta' : 'servicio'
       })
     });
     const data = await response.json();

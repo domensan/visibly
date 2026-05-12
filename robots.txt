@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /backend/
+Disallow: /forms/
+
+Sitemap: https://visibly.cl/sitemap.xml

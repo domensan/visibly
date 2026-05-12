@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnóstico DIGIT™ — Visibly</title>
+<meta name="description" content="Completa tu diagnóstico digital con Visibly™. Etapa D del Método DIGIT™.">
+<meta name="robots" content="noindex, nofollow">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDCE7K5263"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDCE7K5263');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #FAFAF8;
+  color: #0a2332;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root {
+  --navy: #0a2332;
+  --teal: #4cbbb8;
+  --teal-dark: #148080;
+  --surface: #F2F2EF;
+  --surface2: #E8E8E4;
+  --muted: #6B7B88;
+  --border: rgba(10,35,50,0.1);
+  --border-strong: rgba(10,35,50,0.18);
+  --white: #FAFAF8;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --max: 680px;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: rgba(250,250,248,0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 2rem;
+  position: sticky; top: 0; z-index: 10;
+}
+.header-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.header-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.header-logo svg { height: 22px; width: auto; }
+.header-badge {
+  font-size: 11px; font-weight: 500; text-transform: uppercase;
+  letter-spacing: .1em; color: var(--teal-dark);
+  padding: 3px 10px; border-radius: 40px;
+  background: rgba(76,187,184,0.1);
+  border: 1px solid rgba(76,187,184,0.3);
+}
+
+/* ===== PROGRESS ===== */
+.progress-wrap {
+  background: var(--surface);
+  padding: .75rem 2rem;
+  border-bottom: 1px solid var(--border);
+}
+.progress-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: flex; align-items: center; gap: 10px;
+}
+.progress-bar-bg {
+  flex: 1; height: 4px; background: var(--surface2);
+  border-radius: 2px; overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%; background: var(--teal);
+  border-radius: 2px; transition: width .4s ease;
+  width: 0%;
+}
+.progress-label {
+  font-size: 12px; color: var(--muted); white-space: nowrap;
+}
+
+/* ===== MAIN ===== */
+.main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+/* ===== PANTALLAS ===== */
+.screen { display: none; }
+.screen.active { display: block; }
+
+/* ===== INTRO ===== */
+.intro-header { margin-bottom: 2rem; }
+.intro-eyebrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 500; text-transform: uppercase;
+  letter-spacing: .1em; color: var(--teal-dark);
+  margin-bottom: 1rem;
+}
+.intro-title {
+  font-size: 28px; font-weight: 500; line-height: 1.2;
+  letter-spacing: -.02em; color: var(--navy);
+  margin-bottom: .75rem;
+}
+.intro-sub {
+  font-size: 15px; color: var(--muted); line-height: 1.65;
+}
+.preloaded-card {
+  background: var(--navy); border-radius: var(--radius);
+  padding: 1.25rem 1.5rem; margin-bottom: 2rem;
+}
+.preloaded-label {
+  font-size: 11px; font-weight: 500; text-transform: uppercase;
+  letter-spacing: .1em; color: var(--teal); margin-bottom: .75rem;
+}
+.preloaded-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+}
+.preloaded-item {}
+.preloaded-key {
+  font-size: 10px; text-transform: uppercase; letter-spacing: .08em;
+  color: rgba(250,250,248,.4); margin-bottom: 2px;
+}
+.preloaded-val {
+  font-size: 14px; font-weight: 500; color: rgba(250,250,248,.9);
+}
+.mod-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 2px; }
+.mod-chip {
+  font-size: 12px; padding: 3px 10px; border-radius: 40px;
+  background: rgba(76,187,184,0.2); color: var(--teal);
+  border: 1px solid rgba(76,187,184,0.3);
+}
+
+/* ===== SECCIONES DEL FORM ===== */
+.form-section { margin-bottom: 2rem; }
+.form-section-title {
+  font-size: 11px; font-weight: 500; text-transform: uppercase;
+  letter-spacing: .1em; color: var(--teal-dark);
+  margin-bottom: 1rem; padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 8px;
+}
+.form-section-title .section-icon {
+  width: 20px; height: 20px; border-radius: 5px;
+  background: rgba(76,187,184,0.1);
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ===== CAMPOS ===== */
+.field { margin-bottom: 1.25rem; }
+.field-label {
+  font-size: 13px; font-weight: 500; color: var(--navy);
+  margin-bottom: 4px; display: block;
+}
+.field-hint {
+  font-size: 12px; color: var(--muted); margin-bottom: 6px;
+  line-height: 1.5; font-style: italic;
+}
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="tel"],
+.field input[type="url"],
+.field select,
+.field textarea {
+  width: 100%; font-size: 14px; font-family: inherit;
+  padding: 10px 14px; border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-strong);
+  background: var(--white); color: var(--navy);
+  outline: none; transition: border-color .15s;
+  -webkit-appearance: none; appearance: none;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(76,187,184,0.1);
+}
+.field textarea { height: 90px; resize: vertical; }
+.field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%236B7B88' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+/* CHECKBOX GROUP */
+.checkbox-group { display: flex; flex-direction: column; gap: 6px; }
+.cb-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  cursor: pointer; padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--white);
+  transition: all .15s;
+}
+.cb-item:hover { border-color: var(--teal); }
+.cb-item.checked { background: rgba(76,187,184,0.07); border-color: var(--teal); }
+.cb-item.checked .cb-text { color: var(--teal-dark); }
+.cb-box {
+  width: 17px; height: 17px; border-radius: 4px;
+  border: 1.5px solid var(--border-strong); flex-shrink: 0;
+  margin-top: 1px; display: flex; align-items: center;
+  justify-content: center; transition: all .15s;
+}
+.cb-item.checked .cb-box { background: var(--teal); border-color: var(--teal); }
+.cb-text { font-size: 13px; color: var(--navy); line-height: 1.4; }
+
+/* RADIO GROUP */
+.radio-group { display: flex; flex-direction: column; gap: 6px; }
+.rb-item {
+  display: flex; align-items: center; gap: 10px;
+  cursor: pointer; padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--white); font-size: 13px; color: var(--muted);
+  transition: all .15s;
+}
+.rb-item:hover { border-color: var(--teal); }
+.rb-item.sel { background: rgba(76,187,184,0.07); border-color: var(--teal); color: var(--teal-dark); }
+.rb-dot {
+  width: 16px; height: 16px; border-radius: 50%;
+  border: 1.5px solid var(--border-strong); flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .15s;
+}
+.rb-item.sel .rb-dot { border-color: var(--teal); }
+.rb-item.sel .rb-dot::after {
+  content: ''; width: 7px; height: 7px;
+  border-radius: 50%; background: var(--teal);
+}
+
+/* UPLOAD */
+.upload-area {
+  border: 1.5px dashed var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 1.5rem; text-align: center;
+  cursor: pointer; transition: all .15s;
+  background: var(--surface);
+}
+.upload-area:hover { border-color: var(--teal); background: rgba(76,187,184,0.04); }
+.upload-area.has-files { border-color: var(--teal); background: rgba(76,187,184,0.06); }
+.upload-icon { margin: 0 auto 8px; opacity: .4; }
+.upload-text { font-size: 13px; color: var(--muted); }
+.upload-text strong { color: var(--navy); }
+.upload-sub { font-size: 11px; color: var(--muted); margin-top: 3px; opacity: .7; }
+.upload-preview { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.upload-thumb {
+  width: 56px; height: 56px; border-radius: 6px;
+  object-fit: cover; border: 1px solid var(--border);
+}
+.upload-file-list { margin-top: 8px; }
+.upload-file-item {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12px; color: var(--muted); padding: 3px 0;
+}
+
+/* ===== PRECIO BOX ===== */
+.precio-box {
+  background: var(--navy); border-radius: var(--radius);
+  padding: 1.25rem 1.5rem; margin-bottom: 2rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+}
+.precio-label { font-size: 12px; color: rgba(250,250,248,.5); margin-bottom: 3px; }
+.precio-valor { font-size: 22px; font-weight: 500; color: var(--white); }
+.precio-note { font-size: 12px; color: rgba(250,250,248,.5); margin-top: 2px; }
+
+/* ===== BOTONES ===== */
+.btn-primary {
+  display: block; width: 100%; padding: 13px;
+  font-size: 15px; font-weight: 500;
+  border-radius: 40px; background: var(--navy);
+  color: var(--white); border: none; cursor: pointer;
+  transition: opacity .15s; font-family: inherit;
+  margin-top: 1rem;
+}
+.btn-primary:hover { opacity: .88; }
+.btn-primary:disabled { opacity: .4; cursor: not-allowed; }
+.btn-ghost {
+  display: inline-block; padding: 11px 20px;
+  font-size: 14px; color: var(--muted);
+  border: 1px solid var(--border-strong);
+  border-radius: 40px; cursor: pointer;
+  background: none; font-family: inherit;
+  transition: all .15s;
+}
+.btn-ghost:hover { color: var(--navy); border-color: var(--navy); }
+.btn-row { display: flex; gap: 8px; margin-top: 1rem; }
+.btn-row .btn-primary { margin-top: 0; }
+
+/* ===== SEPARADOR ===== */
+.section-sep {
+  border: none; border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+/* ===== SUCCESS ===== */
+.success-wrap { text-align: center; padding: 3rem 1rem; }
+.success-icon {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: #16A34A; display: flex; align-items: center;
+  justify-content: center; margin: 0 auto 1.25rem;
+}
+.success-title {
+  font-size: 24px; font-weight: 500; color: var(--navy);
+  margin-bottom: .75rem; letter-spacing: -.02em;
+}
+.success-sub {
+  font-size: 15px; color: var(--muted); line-height: 1.65;
+  margin-bottom: 2rem;
+}
+.success-next {
+  background: var(--surface); border-radius: var(--radius);
+  padding: 1.25rem 1.5rem; text-align: left; margin-bottom: 1.5rem;
+}
+.success-next-label {
+  font-size: 11px; font-weight: 500; text-transform: uppercase;
+  letter-spacing: .1em; color: var(--teal-dark); margin-bottom: .5rem;
+}
+.success-next-title {
+  font-size: 16px; font-weight: 500; color: var(--navy); margin-bottom: 4px;
+}
+.success-next-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+/* ===== HONEYPOT (anti-spam) ===== */
+.hp-field { display: none !important; }
+
+/* ===== LOADING ===== */
+.loading-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(250,250,248,0.85);
+  backdrop-filter: blur(8px);
+  z-index: 100; flex-direction: column;
+  align-items: center; justify-content: center; gap: 1rem;
+}
+.loading-overlay.active { display: flex; }
+.spinner {
+  width: 36px; height: 36px; border: 2px solid var(--border);
+  border-top-color: var(--teal); border-radius: 50%;
+  animation: spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.loading-text { font-size: 14px; color: var(--muted); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .main { padding: 2rem 1rem 3rem; }
+  .preloaded-grid { grid-template-columns: 1fr; }
+  .intro-title { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+
+<!-- LOADING -->
+<div class="loading-overlay" id="loading">
+  <div class="spinner"></div>
+  <div class="loading-text">Enviando tu diagnóstico...</div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a class="header-logo" href="https://visibly.cl">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 309.38 88.15">
+        <defs><style>.l1{fill:#0a2332}.l2{fill:none;stroke:#0a2332;stroke-miterlimit:10;stroke-width:.75px}.l3{fill:#4cbbb8}.l4{fill:#148080}</style></defs>
+        <g><path class="l1" d="M299.95,22v.7h-.88v2.84h-.84v-2.84h-.88v-.7h2.6Z"/><path class="l1" d="M301.87,25.54l-.87-2.89v2.89h-.69v-3.54h1.29l.62,2.12.65-2.12h1.29v3.54h-.83v-2.89l-.89,2.89h-.57Z"/></g>
+        <polyline class="l4" points="17.77 45.51 26.64 72.92 43.59 72.92 60.82 20.02 66.28 30.65 83.24 30.65 67.74 .28 67.25 .28 67.29 .16 50.26 .1 50.14 .45 49.79 .45 34.97 46.26 28.55 26.43 28.51 26.31 27.63 26.32 10.6 26.26 0 45.46"/>
+        <polygon class="l3" points="71.76 15.56 91.54 15.56 86.33 30.69 66.94 30.69 71.76 15.56"/>
+        <polygon class="l1" points="84.84 34.84 72.06 72.98 55.11 72.98 67.89 34.84 84.84 34.84"/>
+        <path class="l1" d="M130.6,42.9l-13.65,2.39c-.62-2.65-3.21-4.02-7.77-4.1-3.19-.06-4.9.72-5.13,2.34-.21,1.42,1.18,2.41,4.17,2.95,6.11,1.08,10.36,2.22,12.75,3.42s4.1,2.71,5.13,4.52c1.03,1.81,1.38,3.84,1.05,6.1-.6,4.09-3.01,7.5-7.22,10.24-4.21,2.74-10.18,4.04-17.92,3.91-5.74-.1-10.6-1.2-14.57-3.31-3.97-2.1-6.19-5.2-6.67-9.27l14.38-1.61c.67,2.95,3.61,4.47,8.82,4.56,2.02.04,3.57-.2,4.63-.71s1.64-1.1,1.74-1.77-.16-1.13-.77-1.45c-.61-.32-2.2-.77-4.77-1.36-5.11-1.17-8.72-2.2-10.82-3.09-2.11-.89-3.81-2.27-5.1-4.15-1.29-1.88-1.75-4.05-1.39-6.49.61-4.17,2.95-7.56,7.01-10.18s9.21-3.88,15.46-3.77c5.68.1,10.39,1.17,14.12,3.22,3.73,2.05,5.9,4.58,6.53,7.61Z"/>
+        <path class="l1" d="M189.41,18.89l-6.47,19.33c2.72-2.49,5.06-4.12,7.03-4.89,1.96-.77,4.09-1.14,6.38-1.1,4.34.08,7.62,1.53,9.82,4.36,2.21,2.83,2.91,6.96,2.11,12.39-.98,6.67-3.94,12.68-8.88,18.04-4.94,5.36-11.08,7.97-18.43,7.84-6.96-.12-11.43-2.79-13.41-8l-6.05,6.73-7.82-.14,18.29-54.86,17.43.31ZM175.82,59.53c-.22,1.51-.26,2.54-.1,3.11.15.57.6,1.12,1.32,1.64.73.52,1.68.8,2.87.82,1.52.03,2.88-.4,4.1-1.28s2.55-2.86,4-5.93c1.45-3.07,2.43-6.36,2.95-9.85.6-4.06-.68-6.12-3.82-6.17s-5.51,1.98-7.46,6.1l-3.87,11.57Z"/>
+        <path class="l1" d="M242.72,19.83l-17.9,53.14h-17.03l17.78-53.45,17.15.3Z"/>
+        <path class="l1" d="M288.79,33.52l-27.61,40.9c-4.05,5.99-7.86,9.78-11.42,11.37-3.56,1.59-7.63,2.34-12.21,2.26-2.29-.04-4.64-.31-7.04-.81l1.65-10.93c3.74.42,6.54.64,8.39.67,4.63.08,7.11-1,7.44-3.23.08-.56.03-1.45-.15-2.67l-5.28-38.37,17.96.32,1.44,16.44c.28,2.78.39,4.53.35,5.26.37-.51.82-1.18,1.33-2.04.41-.75.9-1.52,1.46-2.32l11.47-17.06,12.2.22Z"/>
+        <polygon class="l1" points="158.52 34.84 145.74 72.98 128.79 72.98 141.57 34.84 158.52 34.84"/>
+        <polygon class="l2" points="296.69 18.63 308.83 18.63 305.16 29.29 293.29 29.29 296.69 18.63"/>
+        <polygon class="l3" points="143.95 15.56 163.74 15.56 158.53 30.69 139.14 30.69 143.95 15.56"/>
+      </svg>
+    </a>
+    <span class="header-badge">Método DIGIT™ · Etapa D</span>
+  </div>
+</header>
+
+<!-- PROGRESS -->
+<div class="progress-wrap">
+  <div class="progress-inner">
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" id="progress-fill"></div>
+    </div>
+    <span class="progress-label" id="progress-label">0 de 7 secciones</span>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- PANTALLA 1: INTRO + NEGOCIO -->
+  <div class="screen active" id="s1">
+    <div class="intro-header">
+      <div class="intro-eyebrow">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#148080" stroke-width="1.2"/><path d="M5 7l2 2 4-4" stroke="#148080" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Detectar · Etapa 1 de 5
+      </div>
+      <h1 class="intro-title">Cuéntanos sobre tu negocio</h1>
+      <p class="intro-sub">Esta información nos permite llegar a la primera conversación con todo el contexto — sin preguntas básicas, directo a lo que importa. Responde con la mayor honestidad posible.</p>
+    </div>
+
+    <!-- Datos pre-cargados -->
+    <div class="preloaded-card" id="preloaded-card">
+      <div class="preloaded-label">Tu cotización</div>
+      <div class="preloaded-grid">
+        <div class="preloaded-item">
+          <div class="preloaded-key">Nombre</div>
+          <div class="preloaded-val" id="pl-nombre">—</div>
+        </div>
+        <div class="preloaded-item">
+          <div class="preloaded-key">Negocio</div>
+          <div class="preloaded-val" id="pl-negocio">—</div>
+        </div>
+        <div class="preloaded-item" style="grid-column:1/-1">
+          <div class="preloaded-key">Módulos seleccionados</div>
+          <div class="mod-chips" id="pl-modulos"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Honeypot anti-spam -->
+    <div class="hp-field">
+      <input type="text" name="website" id="hp-website" tabindex="-1" autocomplete="off">
+    </div>
+
+    <div class="form-section">
+      <div class="form-section-title">
+        <span class="section-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1a2 2 0 1 1 0 4A2 2 0 0 1 6 1zM2 10c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke="#148080" stroke-width="1.1" stroke-linecap="round"/></svg></span>
+        Tu negocio
+      </div>
+
+      <div class="field">
+        <label class="field-label">¿Cómo se llama tu negocio o consulta?</label>
+        <div class="field-hint">Ej: Centro Dental Viña, Psicóloga Andrea Muñoz. Si trabajas con tu nombre, ponlo así.</div>
+        <input type="text" id="f-nombre-negocio" placeholder="Nombre de tu negocio o consulta" maxlength="200">
+      </div>
+
+      <div class="field">
+        <label class="field-label">¿A qué te dedicas?</label>
+        <div class="field-hint">Ej: Soy dentista con consulta propia en Viña del Mar, atiendo hace 8 años y me especializo en ortodoncia.</div>
+        <textarea id="f-dedicacion" placeholder="Cuéntanos con tus palabras..." maxlength="1000"></textarea>
+      </div>
+
+      <div class="field">
+        <label class="field-label">¿Hace cuánto llevas en esto?</label>
+        <select id="f-antiguedad">
+          <option value="">Selecciona...</option>
+          <option>Menos de 1 año</option>
+          <option>1 a 3 años</option>
+          <option>Más de 3 años</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="field-label">¿Quién es la persona que más necesita lo que ofreces?</label>
+        <div class="field-hint">Ej: Mamás de entre 30 y 45 años que buscan ortodoncia para sus hijos en Viña o Concón.</div>
+        <textarea id="f-cliente-ideal" placeholder="Descríbela con la mayor precisión posible..." maxlength="1000"></textarea>
+      </div>
+
+      <div class="field">
+        <label class="field-label">¿Cómo te encuentran hoy tus clientes?</label>
+        <div class="field-hint">Ej: La mayoría llega por recomendación. Algunos por Instagram pero no tengo mucho contenido. Nadie me encuentra en Google todavía.</div>
+        <textarea id="f-como-encuentran" placeholder="Sé honesto, cualquier respuesta es válida..." maxlength="1000"></textarea>
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="goScreen(2)">Continuar →</button>
+  </div>
+
+  <!-- PANTALLA 2: OBJETIVOS -->
+  <div class="screen" id="s2">
+    <div class="intro-header">
+      <div class="intro-eyebrow">Detectar · Etapa 2 de 5</div>
+      <h2 class="intro-title">Tus objetivos</h2>
+      <p class="intro-sub">Cuéntanos qué quieres lograr y en qué plazo. Esto define el éxito del proyecto.</p>
+    </div>
+
+    <div class="form-section">
+      <div class="form-section-title">Qué quieres lograr</div>
+
+      <div class="field">
+        <label class="field-label">¿Qué quieres que pase después de activar tu presencia digital?</label>
+        <div class="field-hint">Puedes elegir más de una.</div>
+        <div class="checkbox-group">
+          <div class="cb-item" onclick="toggleCb(this)"><div class="cb-box"></div><span class="cb-text">Llenar mi agenda</span></div>
+          <div class="cb-item" onclick="toggleCb(this)"><div class="cb-box"></div><span class="cb-text">Recibir más consultas online</span></div>
+          <div class="cb-item" onclick="toggleCb(this)"><div class="cb-box"></div><span class="cb-text">Proyectar una imagen más profesional</span></div>
+          <div class="cb-item" onclick="toggleCb(this)"><div class="cb-box"></div><span class="cb-text">Aparecer antes que la competencia en Google</span></div>
+          <div class="cb-item" onclick="toggleCb(this)"><div class="cb-box"></div><span class="cb-text">Todo lo anterior</span></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">¿Para cuándo necesitas tener esto funcionando?</label>
+        <div class="radio-group" id="rg-urgencia">
+          <div class="rb-item" onclick="selRb('urgencia',this)"><div class="rb-dot"></div>Lo antes posible</div>
+          <div class="rb-item" onclick="selRb('urgencia',this)"><div class="rb-dot"></div>En el próximo mes</div>
+          <div class="rb-item" onclick="selRb('urgencia',this)"><div class="rb-dot"></div>En 2 a 3 meses</div>
+          <div class="rb-item" onclick="selRb('urgencia',this)"><div class="rb-dot"></div>Todavía no tengo claro el timing</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">¿Cómo te sentiste con el total de tu cotización?</label>
+        <div class="radio-group" id="rg-precio">
+          <div class="rb-item" onclick="selRb('precio',this)"><div class="rb-dot"></div>Me parece justo para lo que necesito</div>
+          <div class="rb-item" onclick="selRb('precio',this)"><div class="rb-dot"></div>Es más de lo esperado pero lo veo como inversión</div>
+          <div class="rb-item" onclick="selRb('precio',this)"><div class="rb-dot"></div>Necesito conversarlo antes de decidir</div>
+          <div class="rb-item" onclick="selRb('precio',this)"><div class="rb-dot"></div>Quiero explorar opciones más acotadas</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-ghost" onclick="goScreen(1)">← Volver</button>
+      <button class="btn-primary" onclick="goScreen(3)" style="flex:1">Continuar →</button>
+    </div>
+  </div>
+
+  <!-- PANTALLA 3: MÓDULOS CONDICIONALES -->
+  <div class="screen" id="s3">
+    <div class="intro-header">
+      <div class="intro-eyebrow">Detectar · Etapa 3 de 5</div>
+      <h2 class="intro-title">Sobre lo que contrataste</h2>
+      <p class="intro-sub">Solo verás las preguntas relevantes para los módulos que elegiste.</p>
+    </div>
+
+    <!-- WEB -->
+    <div class="form-section" id="bloque-web" style="display:none">
+      <div class="form-section-title">
+        <span class="section-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="1.5" width="10" height="7" rx="1.5" stroke="#148080" stroke-width="1.1"/><path d="M4 10.5h4M6 8.5v2" stroke="#148080" stroke-width="1.1" stroke-linecap="round"/></svg></span>
+        Sitio web
+      </div>
+      <div class="field">
+        <label class="field-label">¿Tienes sitio web hoy?</label>
+        <div class="radio-group" id="rg-tieneweb">
+          <div class="rb-item" onclick="selRb('tieneweb',this);showField('campo-url-web')"><div class="rb-dot"></div>Sí</div>
+          <div class="rb-item" onclick="selRb('tieneweb',this);hideField('campo-url-web')"><div class="rb-dot"></div>No</div>
+        </div>
+      </div>
+      <div class="field" id="campo-url-web" style="display:none">
+        <label class="field-label">¿Cuál es tu sitio actual?</label>
+        <div class="field-hint">Aunque esté desactualizado o no te guste, igual ponlo.</div>
+        <input type="url" id="f-url-web" placeholder="https://www.tunegocio.cl">
+      </div>
+      <div class="field">
+        <label class="field-label">¿Qué quieres que haga tu sitio web?</label>
+        <div class="field-hint">Puedes elegir más de una.</div>
+        <div class="checkbox-group">
+          <div class="cb-item" onclick="toggleCb(this)"><div class="cb-box"></div><span class="cb-text">Que me llamen o escriban por WhatsApp</span></div>
+          <div class="cb-item" onclick="toggleCb(this)"><div class="cb-box"></div><span class="cb-text">Que agenden una hora directamente</span></div>
+          <div class="cb-item" onclick="toggleCb(this)"><div class="cb-box"></div><span class="cb-text">Que conozcan mis servicios y precios</span></div>
+          <div class="cb-item" onclick="toggleCb(this)"><div class="cb-box"></div><span class="cb-text">Que me encuentren en Google cuando busquen lo que hago</span></div>
+        </div>
+      </div>
+      <div class="field">
+        <label class="field-label">¿Hay algo importante que debamos saber antes de empezar? <span style="font-weight:400;color:var(--muted)">(opcional)</span></label>
+        <div class="field-hint">Ej: Prefiero no mostrar precios públicamente. No quiero fotos mías, solo del espacio.</div>
+        <textarea id="f-nota-web" placeholder="Cualquier detalle que nos ayude a trabajar mejor..." maxlength="500"></textarea>
+      </div>
+    </div>
+
+    <hr class="section-sep" id="sep-web-rrss" style="display:none">
+
+    <!-- RRSS -->
+    <div class="form-section" id="bloque-rrss" style="display:none">
+      <div class="form-section-title">
+        <span class="section-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="3" cy="6" r="1.5" stroke="#148080" stroke-width="1.1"/><circle cx="9" cy="2.5" r="1.5" stroke="#148080" stroke-width="1.1"/><circle cx="9" cy="9.5" r="1.5" stroke="#148080" stroke-width="1.1"/><path d="M4.5 5.25l3-2M4.5 6.75l3 2" stroke="#148080" stroke-width="1.1"/></svg></span>
+        Redes sociales
+      </div>
+      <div class="field">
+        <label class="field-label">¿En qué redes estás presente hoy?</label>
+        <div class="checkbox-group">
+          <div class="cb-item" onclick="toggleCb(this)"><div class="cb-box"></div><span class="cb-text">Instagram</span></div>
+          <div class="cb-item" onclick="toggleCb(this)"><div class="cb-box"></div><span class="cb-text">Facebook</span></div>
+          <div class="cb-item" onclick="toggleCb(this)"><div class="cb-box"></div><span class="cb-text">LinkedIn</span></div>
+          <div class="cb-item" onclick="toggleCb(this)"><div class="cb-box"></div><span class="cb-text">TikTok</span></div>
+          <div class="cb-item" onclick="toggleCb(this)"><div class="cb-box"></div><span class="cb-text">Ninguna todavía</span></div>
+        </div>
+      </div>
+      <div class="field">
+        <label class="field-label">¿Con qué frecuencia publicas actualmente?</label>
+        <div class="radio-group" id="rg-frecuencia">
+          <div class="rb-item" onclick="selRb('frecuencia',this)"><div class="rb-dot"></div>Nunca</div>
+          <div class="rb-item" onclick="selRb('frecuencia',this)"><div class="rb-dot"></div>Muy de vez en cuando</div>
+          <div class="rb-item" onclick="selRb('frecuencia',this)"><div class="rb-dot"></div>1 a 2 veces por semana</div>
+          <div class="rb-item" onclick="selRb('frecuencia',this)"><div class="rb-dot"></div>Más seguido</div>
+        </div>
+      </div>
+      <div class="field">
+        <label class="field-label">¿Qué tipo de contenido te imaginas publicando?</label>
+        <div class="checkbox-group">
+          <div class="cb-item" onclick="toggleCb(this)"><div class="cb-box"></div><span class="cb-text">Casos de éxito o resultados de mi trabajo</span></div>
+          <div class="cb-item" onclick="toggleCb(this)"><div class="cb-box"></div><span class="cb-text">Tips y consejos de mi área</span></div>
+          <div class="cb-item" onclick="toggleCb(this)"><div class="cb-box"></div><span class="cb-text">El detrás de escena de mi día a día</span></div>
+          <div class="cb-item" onclick="toggleCb(this)"><div class="cb-box"></div><span class="cb-text">Promociones y servicios</span></div>
+          <div class="cb-item" onclick="toggleCb(this)"><div class="cb-box"></div><span class="cb-text">No tengo idea, necesito orientación</span></div>
+        </div>
+      </div>
+      <div class="field">
+        <label class="field-label">¿Cómo te comunicas normalmente con tus clientes?</label>
+        <div class="radio-group" id="rg-tono">
+          <div class="rb-item" onclick="selRb('tono',this)"><div class="rb-dot"></div>Formal y profesional</div>
+          <div class="rb-item" onclick="selRb('tono',this)"><div class="rb-dot"></div>Cercano y directo</div>
+          <div class="rb-item" onclick="selRb('tono',this)"><div class="rb-dot"></div>Técnico y especializado</div>
+          <div class="rb-item" onclick="selRb('tono',this)"><div class="rb-dot"></div>Cálido y empático</div>
+        </div>
+      </div>
+      <div class="field">
+        <label class="field-label">¿Tienes fotos o videos de tu trabajo o espacio?</label>
+        <div class="field-hint">Esto nos ayuda a planificar qué necesitamos producir contigo.</div>
+        <div class="radio-group" id="rg-fotos">
+          <div class="rb-item" onclick="selRb('fotos',this)"><div class="rb-dot"></div>Sí, tengo bastante material</div>
+          <div class="rb-item" onclick="selRb('fotos',this)"><div class="rb-dot"></div>Tengo poco</div>
+          <div class="rb-item" onclick="selRb('fotos',this)"><div class="rb-dot"></div>No tengo nada aún</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-sep" id="sep-rrss-marca" style="display:none">
+
+    <!-- MARCA PERSONAL -->
+    <div class="form-section" id="bloque-marca" style="display:none">
+      <div class="form-section-title">
+        <span class="section-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="4" r="2.5" stroke="#148080" stroke-width="1.1"/><path d="M1.5 10.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5" stroke="#148080" stroke-width="1.1" stroke-linecap="round"/></svg></span>
+        Marca personal
+      </div>
+      <div class="field">
+        <label class="field-label">¿Tienes perfil en LinkedIn?</label>
+        <div class="radio-group" id="rg-linkedin">
+          <div class="rb-item" onclick="selRb('linkedin',this);showField('campo-linkedin')"><div class="rb-dot"></div>Sí</div>
+          <div class="rb-item" onclick="selRb('linkedin',this);showField('campo-linkedin')"><div class="rb-dot"></div>Sí, pero está desactualizado</div>
+          <div class="rb-item" onclick="selRb('linkedin',this);hideField('campo-linkedin')"><div class="rb-dot"></div>No</div>
+        </div>
+      </div>
+      <div class="field" id="campo-linkedin" style="display:none">
+        <label class="field-label">¿Cuál es tu perfil?</label>
+        <input type="url" id="f-linkedin" placeholder="linkedin.com/in/tunombre">
+      </div>
+      <div class="field">
+        <label class="field-label">¿Cómo quieres que te perciban las personas que te encuentran online?</label>
+        <div class="field-hint">Ej: Quiero que se note que soy un profesional serio pero cercano, con años de experiencia real.</div>
+        <textarea id="f-percepcion-marca" placeholder="Descríbelo con tus palabras..." maxlength="800"></textarea>
+      </div>
+      <div class="field">
+        <label class="field-label">¿Para qué usarías principalmente tu marca personal?</label>
+        <div class="checkbox-group">
+          <div class="cb-item" onclick="toggleCb(this)"><div class="cb-box"></div><span class="cb-text">Atraer nuevos clientes</span></div>
+          <div class="cb-item" onclick="toggleCb(this)"><div class="cb-box"></div><span class="cb-text">Generar alianzas o colaboraciones</span></div>
+          <div class="cb-item" onclick="toggleCb(this)"><div class="cb-box"></div><span class="cb-text">Posicionarme como referente en mi área</span></div>
+          <div class="cb-item" onclick="toggleCb(this)"><div class="cb-box"></div><span class="cb-text">Tener una presencia profesional coherente en todos lados</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BRANDING -->
+    <div class="form-section" id="bloque-branding" style="display:none">
+      <hr class="section-sep">
+      <div class="form-section-title">
+        <span class="section-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1.5 10.5l2.5-2.5 6-6-2.5-2.5-6 6-2.5 2.5 2.5 2.5z" stroke="#148080" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        Branding
+      </div>
+      <div class="field">
+        <label class="field-label">¿Tienes logo o identidad visual hoy?</label>
+        <div class="radio-group" id="rg-tienelogo">
+          <div class="rb-item" onclick="selRb('tienelogo',this)"><div class="rb-dot"></div>Sí, tengo logo y me gusta</div>
+          <div class="rb-item" onclick="selRb('tienelogo',this)"><div class="rb-dot"></div>Tengo algo pero quiero cambiarlo</div>
+          <div class="rb-item" onclick="selRb('tienelogo',this)"><div class="rb-dot"></div>No tengo nada todavía</div>
+        </div>
+      </div>
+      <div class="field">
+        <label class="field-label">¿Qué adjetivos describen cómo quieres que se vea tu marca?</label>
+        <div class="field-hint">Ej: Seria, moderna, cercana, sofisticada, minimalista, colorida.</div>
+        <textarea id="f-adj-marca" placeholder="Describe en palabras el look & feel que buscas..." maxlength="500"></textarea>
+      </div>
+      <div class="field">
+        <label class="field-label">¿Hay marcas o logos que te gusten como referencia?</label>
+        <div class="field-hint">Pueden ser del mismo rubro o de otro. Lo que importa es el estilo visual.</div>
+        <textarea id="f-ref-branding" placeholder="Ej: Me gusta el estilo de Apple, Zara, o el logo de la clínica X..." maxlength="500"></textarea>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-ghost" onclick="goScreen(2)">← Volver</button>
+      <button class="btn-primary" onclick="goScreen(4)" style="flex:1">Continuar →</button>
+    </div>
+  </div>
+
+  <!-- PANTALLA 4: REFERENCIAS -->
+  <div class="screen" id="s4">
+    <div class="intro-header">
+      <div class="intro-eyebrow">Detectar · Etapa 4 de 5</div>
+      <h2 class="intro-title">Referencias visuales</h2>
+      <p class="intro-sub">No tienes que saber de diseño. Solo muéstranos lo que te gusta y construimos desde ahí.</p>
+    </div>
+
+    <div class="form-section">
+      <div class="form-section-title">Lo que te gusta</div>
+
+      <div class="field">
+        <label class="field-label">¿Hay sitios web, perfiles o marcas que te gusten visualmente? <span style="font-weight:400;color:var(--muted)">(opcional)</span></label>
+        <div class="field-hint">Ej: Me gusta el Instagram de @clinicadental.baires. También la web de fernandopsicólogo.cl — se ve limpia y moderna. No tiene que ser del mismo rubro.</div>
+        <textarea id="f-referencias-texto" placeholder="URLs o nombres de referencia..." maxlength="1000"></textarea>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Sube imágenes de referencia <span style="font-weight:400;color:var(--muted)">(opcional)</span></label>
+        <div class="field-hint">Logos, webs, colores, ambientes, tipografías que te gusten. Cualquier cosa que capture el estilo que buscas.</div>
+        <div class="upload-area" id="upload-area" onclick="document.getElementById('file-input').click()">
+          <div class="upload-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 18V10M14 10l-4 4M14 10l4 4" stroke="#6B7B88" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="3" width="22" height="22" rx="5" stroke="#6B7B88" stroke-width="1.2"/></svg>
+          </div>
+          <div class="upload-text"><strong>Haz clic para subir imágenes</strong></div>
+          <div class="upload-sub">PNG, JPG, GIF hasta 10MB · Puedes subir varias</div>
+          <div class="upload-preview" id="upload-preview"></div>
+        </div>
+        <input type="file" id="file-input" multiple accept="image/*" style="display:none" onchange="previewFiles(this)">
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-ghost" onclick="goScreen(3)">← Volver</button>
+      <button class="btn-primary" onclick="goScreen(5)" style="flex:1">Continuar →</button>
+    </div>
+  </div>
+
+  <!-- PANTALLA 5: CIERRE -->
+  <div class="screen" id="s5">
+    <div class="intro-header">
+      <div class="intro-eyebrow">Detectar · Etapa 5 de 5</div>
+      <h2 class="intro-title">Último paso</h2>
+      <p class="intro-sub">Casi listo. Solo necesitamos saber cuándo y cómo contactarte.</p>
+    </div>
+
+    <div class="form-section">
+      <div class="form-section-title">Para coordinar</div>
+
+      <div class="field">
+        <label class="field-label">¿Cómo nos encontraste?</label>
+        <div class="radio-group" id="rg-como">
+          <div class="rb-item" onclick="selRb('como',this)"><div class="rb-dot"></div>Google</div>
+          <div class="rb-item" onclick="selRb('como',this)"><div class="rb-dot"></div>Instagram</div>
+          <div class="rb-item" onclick="selRb('como',this)"><div class="rb-dot"></div>LinkedIn</div>
+          <div class="rb-item" onclick="selRb('como',this)"><div class="rb-dot"></div>Me lo recomendaron</div>
+          <div class="rb-item" onclick="selRb('como',this)"><div class="rb-dot"></div>Otro</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">¿Cuándo estarías disponible para una primera llamada?</label>
+        <div class="radio-group" id="rg-disponibilidad">
+          <div class="rb-item" onclick="selRb('disponibilidad',this)"><div class="rb-dot"></div>Esta semana</div>
+          <div class="rb-item" onclick="selRb('disponibilidad',this)"><div class="rb-dot"></div>La próxima semana</div>
+          <div class="rb-item" onclick="selRb('disponibilidad',this)"><div class="rb-dot"></div>En 2 a 4 semanas</div>
+          <div class="rb-item" onclick="selRb('disponibilidad',this)"><div class="rb-dot"></div>Prefiero todo por escrito, sin llamada</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">¿Cómo prefieres que te contactemos?</label>
+        <div class="radio-group" id="rg-contacto">
+          <div class="rb-item" onclick="selRb('contacto',this)"><div class="rb-dot"></div>WhatsApp</div>
+          <div class="rb-item" onclick="selRb('contacto',this)"><div class="rb-dot"></div>Email</div>
+          <div class="rb-item" onclick="selRb('contacto',this)"><div class="rb-dot"></div>Videollamada directa</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">¿Algo más que quieras contarnos? <span style="font-weight:400;color:var(--muted)">(opcional)</span></label>
+        <textarea id="f-mensaje-libre" placeholder="Cualquier detalle que no hayamos preguntado y que creas importante..." maxlength="1000"></textarea>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-ghost" onclick="goScreen(4)">← Volver</button>
+      <button class="btn-primary" onclick="enviarFormulario()" id="btn-enviar" style="flex:1">Enviar diagnóstico →</button>
+    </div>
+  </div>
+
+  <!-- PANTALLA 6: ÉXITO -->
+  <div class="screen" id="s6">
+    <div class="success-wrap">
+      <div class="success-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 11l5 5 9-9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h2 class="success-title">¡Diagnóstico enviado!</h2>
+      <p class="success-sub">Recibiste un resumen por email. Revisaremos todo lo que nos compartiste y te contactaremos en menos de 24 horas.</p>
+
+      <div class="success-next">
+        <div class="success-next-label">Método DIGIT™ · Etapa D completada ✓</div>
+        <div class="success-next-title">La siguiente etapa es Idear</div>
+        <div class="success-next-desc">Definiremos juntos la dirección visual y de comunicación de tu proyecto. Con toda la información que nos diste, llegamos preparados.</div>
+      </div>
+
+      <a href="https://visibly.cl" style="display:inline-block;font-size:14px;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--border)">← Volver a visibly.cl</a>
+    </div>
+  </div>
+
+</main>
+
+<script>
+// ============================================================
+// CONFIGURACIÓN — reemplaza con la URL de tu Apps Script
+// ============================================================
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz-39eh6sNYHCdl6R9eAW6iL-dg9iHMQgTRnMhXk35EZfdzuElpMmwhdQlorx9AYaFc/exec';
+// Ejemplo: 'https://script.google.com/macros/s/AKfycby.../exec'
+
+// ============================================================
+// URL PARAMS — pre-cargar datos desde la cotización
+// ============================================================
+const params = new URLSearchParams(window.location.search);
+const urlData = {
+  nombre: decodeURIComponent(params.get('nombre') || ''),
+  negocio: decodeURIComponent(params.get('negocio') || ''),
+  email: decodeURIComponent(params.get('email') || ''),
+  phone: decodeURIComponent(params.get('phone') || ''),
+  modulos: decodeURIComponent(params.get('modulos') || ''),
+  total: decodeURIComponent(params.get('total') || '')
+};
+
+// Mostrar datos pre-cargados
+document.getElementById('pl-nombre').textContent = urlData.nombre || '—';
+document.getElementById('pl-negocio').textContent = urlData.negocio || '—';
+
+const modulosArr = urlData.modulos ? urlData.modulos.split(',').map(m => m.trim()).filter(Boolean) : [];
+const chipsEl = document.getElementById('pl-modulos');
+if (modulosArr.length > 0) {
+  modulosArr.forEach(m => {
+    const chip = document.createElement('span');
+    chip.className = 'mod-chip';
+    chip.textContent = m;
+    chipsEl.appendChild(chip);
+  });
+} else {
+  chipsEl.textContent = '—';
+}
+
+// Mostrar bloques condicionales según módulos
+function initModulosCondicionales() {
+  const mods = modulosArr.map(m => m.toLowerCase());
+  const hasWeb = mods.some(m => m.includes('web') || m.includes('sitio'));
+  const hasRRSS = mods.some(m => m.includes('redes') || m.includes('rrss') || m.includes('social'));
+  const hasMarca = mods.some(m => m.includes('marca') || m.includes('personal'));
+  const hasBranding = mods.some(m => m.includes('branding') || m.includes('identidad'));
+
+  if (hasWeb) { show('bloque-web'); }
+  if (hasRRSS) { show('bloque-rrss'); }
+  if (hasMarca) { show('bloque-marca'); }
+  if (hasBranding) { show('bloque-branding'); }
+  if (hasWeb && hasRRSS) show('sep-web-rrss');
+  if (hasRRSS && hasMarca) show('sep-rrss-marca');
+
+  // Si no hay módulos detectados, mostrar todos
+  if (!hasWeb && !hasRRSS && !hasMarca && !hasBranding) {
+    show('bloque-web'); show('bloque-rrss'); show('bloque-marca');
+    show('sep-web-rrss'); show('sep-rrss-marca');
+  }
+}
+
+initModulosCondicionales();
+
+// ============================================================
+// NAVEGACIÓN ENTRE PANTALLAS
+// ============================================================
+const TOTAL_SCREENS = 5;
+let currentScreen = 1;
+
+function goScreen(n) {
+  document.getElementById('s' + currentScreen).classList.remove('active');
+  document.getElementById('s' + n).classList.add('active');
+  currentScreen = n;
+  updateProgress(n);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateProgress(n) {
+  if (n > TOTAL_SCREENS) return;
+  const pct = Math.round(((n - 1) / TOTAL_SCREENS) * 100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-label').textContent = (n - 1) + ' de ' + TOTAL_SCREENS + ' secciones';
+}
+
+// ============================================================
+// CHECKBOXES Y RADIOS
+// ============================================================
+const chkSVG = '<svg width="10" height="10" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const radioVals = {};
+
+function toggleCb(el) {
+  el.classList.toggle('checked');
+  const box = el.querySelector('.cb-box');
+  box.innerHTML = el.classList.contains('checked') ? chkSVG : '';
+}
+
+function selRb(group, el) {
+  radioVals[group] = el.querySelector('.rb-dot + *') ? el.textContent.trim() : '';
+  // Busca el texto del rb-item
+  radioVals[group] = el.innerText.trim();
+  document.querySelectorAll('#rg-' + group + ' .rb-item').forEach(r => {
+    r.classList.remove('sel');
+    r.querySelector('.rb-dot').innerHTML = '';
+  });
+  el.classList.add('sel');
+}
+
+// ============================================================
+// MOSTRAR/OCULTAR CAMPOS CONDICIONALES
+// ============================================================
+function show(id) { const el = document.getElementById(id); if (el) el.style.display = 'block'; }
+function hide(id) { const el = document.getElementById(id); if (el) el.style.display = 'none'; }
+function showField(id) { show(id); }
+function hideField(id) { hide(id); }
+
+// ============================================================
+// UPLOAD DE IMÁGENES
+// ============================================================
+function previewFiles(input) {
+  const preview = document.getElementById('upload-preview');
+  const area = document.getElementById('upload-area');
+  preview.innerHTML = '';
+  if (input.files.length > 0) area.classList.add('has-files');
+  Array.from(input.files).forEach(file => {
+    if (file.type.startsWith('image/')) {
+      const reader = new FileReader();
+      reader.onload = e => {
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        img.className = 'upload-thumb';
+        img.title = file.name;
+        preview.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+}
+
+// ============================================================
+// RECOLECTAR DATOS DEL FORMULARIO
+// ============================================================
+function getCheckedValues(containerSelector) {
+  const items = document.querySelectorAll(containerSelector + ' .cb-item.checked .cb-text');
+  return Array.from(items).map(el => el.textContent).join(', ') || '—';
+}
+
+function getFormData() {
+  return {
+    flowType: 'diagnostico',
+    // Pre-cargados
+    nombre: urlData.nombre,
+    negocio: urlData.negocio,
+    email: urlData.email,
+    phone: urlData.phone,
+    modulos: urlData.modulos,
+    total: urlData.total,
+
+    // Honeypot
+    hp: document.getElementById('hp-website').value,
+
+    // Bloque 1 — Negocio
+    nombreNegocio: val('f-nombre-negocio'),
+    dedicacion: val('f-dedicacion'),
+    antiguedad: val('f-antiguedad'),
+    clienteIdeal: val('f-cliente-ideal'),
+    comoEncuentran: val('f-como-encuentran'),
+
+    // Bloque 2 — Objetivos
+    objetivo: getCheckedValues('#s2'),
+    urgencia: radioVals['urgencia'] || '—',
+    percepcionPrecio: radioVals['precio'] || '—',
+
+    // Bloque 3 — Web
+    tieneWeb: radioVals['tieneweb'] || '—',
+    urlWeb: val('f-url-web'),
+    queHaceWeb: getCheckedValues('#bloque-web'),
+    notaWeb: val('f-nota-web'),
+
+    // Bloque 3 — RRSS
+    redesActuales: getCheckedValues('#bloque-rrss'),
+    frecuencia: radioVals['frecuencia'] || '—',
+    tipoContenido: getCheckedValues('#bloque-rrss .checkbox-group:nth-child(3)') || getCheckedValues('#bloque-rrss'),
+    tonoComun: radioVals['tono'] || '—',
+    tieneFotos: radioVals['fotos'] || '—',
+
+    // Bloque 3 — Marca personal
+    tieneLinkedin: radioVals['linkedin'] || '—',
+    urlLinkedin: val('f-linkedin'),
+    percepcionMarca: val('f-percepcion-marca'),
+    paraQueMarca: getCheckedValues('#bloque-marca'),
+
+    // Bloque 3 — Branding
+    tieneLogoHoy: radioVals['tienelogo'] || '—',
+    adjMarca: val('f-adj-marca'),
+    refBranding: val('f-ref-branding'),
+
+    // Bloque 4 — Referencias
+    referenciasTexto: val('f-referencias-texto'),
+
+    // Bloque 5 — Cierre
+    comoEncontro: radioVals['como'] || '—',
+    disponibilidad: radioVals['disponibilidad'] || '—',
+    contactoPreferido: radioVals['contacto'] || '—',
+    mensajeLibre: val('f-mensaje-libre')
+  };
+}
+
+function val(id) {
+  const el = document.getElementById(id);
+  return el ? el.value.trim() : '';
+}
+
+// ============================================================
+// ENVIAR FORMULARIO
+// ============================================================
+async function enviarFormulario() {
+  const data = getFormData();
+
+  // Anti-spam: honeypot
+  if (data.hp) {
+    console.log('Honeypot triggered');
+    goScreen(6); // Simular éxito para no revelar el filtro
+    return;
+  }
+
+  // Validación básica
+  if (!data.nombreNegocio && !data.negocio) {
+    alert('Por favor completa al menos el nombre de tu negocio.');
+    return;
+  }
+
+  // UI loading
+  document.getElementById('loading').classList.add('active');
+  document.getElementById('btn-enviar').disabled = true;
+
+  try {
+    await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(data)
+    });
+
+    goScreen(6);
+      // Actualizar barra de progreso al 100%
+      document.getElementById('progress-fill').style.width = '100%';
+      document.getElementById('progress-label').textContent = 'Diagnóstico completado ✓';
+  } catch (err) {
+    console.error('Error enviando:', err);
+    alert('Hubo un problema al enviar. Por favor intenta de nuevo o escríbenos a hola@visibly.cl');
+    document.getElementById('btn-enviar').disabled = false;
+  } finally {
+    document.getElementById('loading').classList.remove('active');
+  }
+}
+
+// Inicializar progreso
+updateProgress(1);
+</script>
+</body>
+</html>

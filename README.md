@@ -46,9 +46,10 @@ Visibly es una plataforma de activación digital diseñada para profesionales qu
    SMTP_HOST=smtp.gmail.com
    SMTP_PORT=587
    SMTP_SECURE=false
-   SMTP_USER=tu-email@gmail.com
+   SMTP_USER=hola@visibly.cl
    SMTP_PASS=tu-app-password
-   TEAM_EMAIL=equipo@visibly.cl
+   TEAM_EMAIL=hola@visibly.cl
+   TEAM_CC_EMAIL=domen.newman@gmail.com
    FRONTEND_URL=http://localhost:3000
    PORT=3001
    ```
@@ -71,9 +72,10 @@ Visibly es una plataforma de activación digital diseñada para profesionales qu
 | `SMTP_HOST` | Host del servidor SMTP | `smtp.gmail.com` |
 | `SMTP_PORT` | Puerto SMTP | `587` |
 | `SMTP_SECURE` | Conexión segura (true/false) | `false` |
-| `SMTP_USER` | Usuario SMTP | `tu-email@gmail.com` |
+| `SMTP_USER` | Usuario SMTP | `hola@visibly.cl` |
 | `SMTP_PASS` | Contraseña SMTP | `tu-app-password` |
-| `TEAM_EMAIL` | Email del equipo | `equipo@visibly.cl` |
+| `TEAM_EMAIL` | Email principal del equipo | `hola@visibly.cl` |
+| `TEAM_CC_EMAIL` | Copia interna para avisos del equipo | `domen.newman@gmail.com` |
 | `FRONTEND_URL` | URL del frontend | `http://localhost:3000` |
 | `PORT` | Puerto del servidor | `3001` |
 

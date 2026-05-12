@@ -1,0 +1,33 @@
+# Visibly
+
+> Activacion digital para profesionales en Chile que quieren ser encontrados online.
+
+Visibly crea y ordena presencia digital para profesionales y negocios de servicio: sitios web, SEO local, Google Business, redes sociales, marca personal y branding. El sitio esta en espanol y apunta principalmente a clientes en Chile.
+
+## Sitio oficial
+
+- https://visibly.cl/
+
+## Contenido principal
+
+- Inicio: propuesta de valor, equipo fundador, Metodo DIGIT, servicios modulares, calculadora de precios y preguntas frecuentes.
+- Servicios: sitio web, SEO local, Google Business optimizado, redes sociales, marca personal, branding y reportes de metricas.
+- Metodo DIGIT: proceso de trabajo para detectar, idear, guiar, implementar y transformar la presencia digital de un cliente.
+
+## Formularios y flujos
+
+- /visibly_consulta/: preparacion para una consulta de orientacion. Esta pagina usa `noindex, nofollow`.
+- /visibly_diagnostico/: diagnostico digital para clientes o prospectos. Esta pagina usa `noindex, nofollow`.
+
+## Datos utiles
+
+- Idioma principal: es-CL.
+- Contacto: hola@visibly.cl.
+- Ubicacion: Concon, Chile.
+- Sitemap: https://visibly.cl/sitemap.xml.
+- Robots: https://visibly.cl/robots.txt.
+
+## Archivos para LLMs
+
+- /llms.txt: resumen breve para modelos.
+- /llms-full.txt: contexto ampliado del sitio, servicios y estructura.
